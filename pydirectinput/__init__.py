@@ -159,6 +159,22 @@ KEYBOARD_MAPPING = {
     'winright': 0xDC + 1024,
     'apps': 0xDD + 1024,
     'ctrlright': 0x9D + 1024,
+    # Left and Right Virtual key codes : https://learn.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes
+    # VK mappings for Shift keys
+    'leftshift': MapVirtualKey(0xA0, MAPVK_VK_TO_VSC),  # VK_LSHIFT
+    'rightshift': MapVirtualKey(0xA1, MAPVK_VK_TO_VSC),  # VK_RSHIFT
+
+    # VK mappings for Control keys
+    'leftctrl': MapVirtualKey(0xA2, MAPVK_VK_TO_VSC),  # VK_LCONTROL
+    'rightctrl': MapVirtualKey(0xA3, MAPVK_VK_TO_VSC),  # VK_RCONTROL
+
+    # VK mappings for Alt keys
+    'leftalt': MapVirtualKey(0xA4, MAPVK_VK_TO_VSC),  # VK_LMENU
+    'rightalt': MapVirtualKey(0xA5, MAPVK_VK_TO_VSC),  # VK_RMENU
+
+    # VK mappings for Windows keys
+    'leftwin': MapVirtualKey(0x5B, MAPVK_VK_TO_VSC),  # VK_LWIN
+    'rightwin': MapVirtualKey(0x5C, MAPVK_VK_TO_VSC),  # VK_RWIN
     # arrow key scancodes can be different depending on the hardware,
     # so I think the best solution is to look it up based on the virtual key
     # https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-mapvirtualkeya?redirectedfrom=MSDN
