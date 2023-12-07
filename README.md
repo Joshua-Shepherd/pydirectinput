@@ -35,6 +35,25 @@ You might also be interested in the main SendInput documentation here: https://d
 
 You can find a discussion of the problems with using vkCodes in video games here: https://stackoverflow.com/questions/14489013/simulate-python-keypresses-for-controlling-a-game
 
+## VK Codes vs DirectInput Scan Codes
+Scan codes can't differentiate between left and right versions of keys, so you can't use them to distinguish between left and right shift, control, alt, or enter keys. So below are the naming conventions I've used for the left and right versions of these keys that have their VK Codes translated to scan codes.
+```python
+    'leftshift': 0xA0, # VK_LSHIFT
+    'rightshift': 0xA1, # VK_RSHIFT
+
+    # VK mappings for Control keys
+    'leftctrl': 0xA2,  # VK_LCONTROL
+    'rightctrl': 0xA3,  # VK_RCONTROL
+
+    # VK mappings for Alt keys
+    'leftalt': 0xA4, # VK_LMENU
+    'rightalt': 0xA5, # VK_RMENU
+
+    # VK mappings for Windows keys
+    'leftwin': 0x5B, # VK_LWIN
+    'rightwin': 0x5C, # VK_RWIN
+```
+
 ## Testing
 
 To run the supplied tests: first setup a virtualenv. Then you can pip install this project in an editable state by doing `pip install -e .`. This allows any edits you make to these project files to be reflected when you run the tests. Run the test file with `python3 tests`.
